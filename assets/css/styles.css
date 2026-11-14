@@ -487,8 +487,9 @@ a:hover .logo-star { transform: rotate(90deg); }
   max-width: 64rem;
   margin-inline: auto;
 }
-@media (min-width: 1024px) { .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 3rem; } }
-@media (min-width: 1280px) { .contact-grid { gap: 4rem; } }
+@media (min-width: 1024px) { .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 4rem; } }
+/* Wide screens: bigger gap, and a slightly wider grid so the cards don't get narrower */
+@media (min-width: 1280px) { .contact-grid { gap: 6rem; max-width: 70rem; } }
 .contact-info,
 .contact-form-card { border-radius: 2rem; padding: 1.5rem; }
 @media (min-width: 640px) { .contact-info, .contact-form-card { padding: 2rem; } }
