@@ -139,6 +139,13 @@ a:hover .logo-star { transform: rotate(90deg); }
 .footer-link { display: inline-block; padding-block: 0.6rem; transition: color 0.2s ease; }
 .footer-link:hover { color: #BE185D; }
 
+/* Header: same light gradient as the footer, slightly see-through for the blur */
+.site-header {
+  background-color: rgba(255, 253, 249, 0.9);
+  background-image: linear-gradient(100deg, rgba(244, 114, 182, 0.14) 0%, rgba(255, 253, 249, 0) 50%, rgba(253, 224, 71, 0.22) 100%);
+  border-bottom: 1px solid #F3E3E8;
+}
+
 /* Footer: light, minimal version of the contact card gradient (pink left, yellow right) */
 .site-footer {
   background-color: #FFFDF9;
