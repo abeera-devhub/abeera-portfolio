@@ -118,20 +118,23 @@
     <!-- Soft colour glows (decoration) -->
     <div class="pointer-events-none absolute -top-16 -left-20 w-96 h-96 glow-blob-pink" aria-hidden="true"></div>
     <div class="pointer-events-none absolute top-1/3 -right-24 w-[30rem] h-[30rem] glow-blob-yellow" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute bottom-0 left-1/3 w-80 h-80 glow-blob-purple" aria-hidden="true"></div>
 
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-8 items-center lg:items-start">
+      <div class="grid grid-cols-1 gap-14 items-center lg:grid-cols-[minmax(0,33rem)_auto] lg:justify-center lg:gap-24">
 
         <!-- Left: intro -->
-        <div class="lg:col-span-7">
+        <div class="hero-copy">
+          <p class="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full bg-berry-600/10 text-berry-800 font-mono text-label-md uppercase">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+            Design · Develop · Deploy
+          </p>
           <h1 class="hero-name font-brand" id="hero-title">Hi, I'm Abeera.</h1>
           <p class="hero-role">
             <span class="sr-only">Web Developer &amp; Software Engineering Student</span>
             <!-- Typed out letter by letter by main.js; the hidden copy keeps the space reserved so nothing jumps -->
             <span class="tw" aria-hidden="true"><span class="tw-ghost">Web Developer &amp; Software Engineering Student</span><span class="tw-typed" data-typewriter>Web Developer &amp; Software Engineering Student</span></span>
           </p>
-          <p class="mt-6 text-body-lg text-neutral-700 max-w-xl">I build responsive, user-friendly websites and web applications, from clean front-end interfaces to the back-end logic and databases behind them, backed by a strong software engineering foundation.</p>
+          <p class="mt-6 text-body-lg text-neutral-700">I build responsive, user-friendly websites and web applications, from clean front-end interfaces to the back-end logic and databases behind them, backed by a strong software engineering foundation.</p>
           <div class="mt-8 flex flex-wrap items-center gap-4">
             <a class="inline-flex items-center justify-center min-h-[3.25rem] px-8 rounded-full bg-berry-700 hover:bg-berry-800 active:scale-[0.97] text-white font-bold text-sm tracking-wider uppercase shadow-lg shadow-berry-700/25 hover:-translate-y-0.5 transition-all" href="#projects">Explore My Work</a>
             <a class="inline-flex items-center justify-center min-h-[3.25rem] px-8 rounded-full bg-sun-200 hover:bg-sun-300 active:scale-[0.97] text-charcoal-900 font-bold text-sm tracking-wider uppercase hover:-translate-y-0.5 transition-all shadow-sm" href="#contact">Get in Touch</a>
@@ -139,8 +142,8 @@
         </div>
 
         <!-- Right: arched portrait with highlights (photo top lines up with the main heading) -->
-        <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
-          <div class="relative w-full max-w-[20rem] sm:max-w-sm lg:max-w-md">
+        <div class="relative flex justify-center">
+          <div class="relative w-full max-w-[19rem] sm:max-w-[22rem] lg:max-w-[23rem]">
             <div class="arch-frame p-3 bg-gradient-to-b from-sun-300 via-pink-200 to-amber-100 shadow-2xl">
               <div class="arch-frame overflow-hidden bg-cream-200 relative aspect-[4/5] border-4 border-white">
                 <!-- PHOTO: assets/images/abeera.jpg (4:5 ratio) -->
@@ -148,8 +151,8 @@
               </div>
             </div>
             <!-- Highlights (decoration: the same facts are written in the text) -->
-            <div class="hero-tag absolute -top-4 -right-1 sm:-right-6 bg-berry-700 text-white rotate-3" aria-hidden="true"><span>✶</span> Front-end &amp; Full-stack Development</div>
-            <div class="hero-tag absolute -bottom-5 right-0 sm:right-2 bg-cream-100 text-berry-700 -rotate-1 border border-berry-600/20" aria-hidden="true"><span>●</span> Open to Internship Opportunities</div>
+            <div class="hero-tag absolute -top-4 right-2 bg-berry-700 text-white rotate-3" aria-hidden="true"><span>✶</span> Front-end &amp; Full-stack Development</div>
+            <div class="hero-tag absolute -bottom-4 left-1/2 -translate-x-1/2 bg-cream-100 text-berry-700 -rotate-1 border border-berry-600/20" aria-hidden="true"><span>●</span> Open to Internship Opportunities</div>
           </div>
         </div>
       </div>
@@ -463,22 +466,15 @@
       </div>
       <div class="contact-grid">
         <div class="contact-info">
-          <div class="space-y-4 text-body-md text-cream-100/90">
-            <p>I'm interested in connecting with teams, professionals, and clients who value thoughtful design and functional digital solutions.</p>
-            <p>Whether you have an internship opportunity, a web development project, or simply want to discuss my work, I'd be glad to hear from you.</p>
-          </div>
-          <div class="mt-auto pt-8">
-            <p class="font-mono text-label-md uppercase text-cream-100/70">Email</p>
-            <a class="email-link mt-1" data-link="email" href="mailto:abeera.devhub@gmail.com">
-              <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              <span data-email-text>abeera.devhub@gmail.com</span>
-              <span class="email-arrow" aria-hidden="true">↗</span>
-            </a>
-            <div class="mt-5 flex flex-wrap items-center gap-3">
-              <a class="social-link" data-link="linkedin" href="https://www.linkedin.com/in/abeera-mustafa-87b50b41a" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
-            <a class="social-link" data-link="github" href="https://github.com/abeera-devhub" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
-            </div>
-          </div>
+          <h3 class="contact-info-title">Let's work together</h3>
+          <p class="contact-info-text">Whether it's an internship, a web project, or a chat about my work, I'd be glad to hear from you.</p>
+          <ul class="contact-list" role="list">
+            <li><a class="contact-row" data-link="email" href="mailto:abeera.devhub@gmail.com"><span class="contact-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="min-w-0"><span class="contact-label">Email</span><span class="contact-value" data-email-text>abeera.devhub@gmail.com</span></span><span class="contact-go" aria-hidden="true">↗</span></a></li>
+            <li><a class="contact-row" data-link="linkedin" href="https://www.linkedin.com/in/abeera-mustafa-87b50b41a" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></span><span><span class="contact-label">LinkedIn</span><span class="contact-value">View profile</span></span><span class="contact-go" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
+            <li><a class="contact-row" data-link="github" href="https://github.com/abeera-devhub" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></span><span><span class="contact-label">GitHub</span><span class="contact-value">abeera-devhub</span></span><span class="contact-go" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
+            <li><div class="contact-row"><span class="contact-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><span class="contact-label">Location</span><span class="contact-value">Lahore, Pakistan</span></span></div></li>
+            <li><div class="contact-row"><span class="contact-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span><span><span class="contact-label">Status</span><span class="contact-value">Open to internship opportunities</span></span></div></li>
+          </ul>
         </div>
 
         <div class="contact-form-card">
@@ -523,13 +519,13 @@
 </main>
 
 <!-- ==================== FOOTER ==================== -->
-<footer class="bg-charcoal-900 text-neutral-300 py-12">
+<footer class="site-footer text-neutral-600 py-12">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center">
-      <span class="flex items-center gap-2"><span class="logo-star" aria-hidden="true">✦</span><span class="font-brand text-2xl text-cream-50">Abeera</span></span>
-      <span class="text-sm text-neutral-400">© 2026 Abeera</span>
+      <span class="flex items-center gap-2"><span class="logo-star" aria-hidden="true">✦</span><span class="font-brand text-2xl text-charcoal-900">Abeera</span></span>
+      <span class="text-sm text-neutral-600">© 2026 Abeera</span>
     </div>
-    <nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-1 text-xs uppercase tracking-wider font-semibold text-neutral-400" aria-label="Footer">
+    <nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-1 text-xs uppercase tracking-wider font-semibold text-neutral-600" aria-label="Footer">
       <a class="footer-link" href="#home">Home</a>
       <a class="footer-link" href="#about">About</a>
       <a class="footer-link" href="#skills">Skills</a>
@@ -537,7 +533,7 @@
       <a class="footer-link" href="#education">Education</a>
       <a class="footer-link" href="#contact">Contact</a>
     </nav>
-    <a class="w-11 h-11 rounded-full bg-neutral-800 hover:bg-berry-700 flex items-center justify-center text-white transition-colors" href="#home" aria-label="Back to top"><span aria-hidden="true">↑</span></a>
+    <a class="w-11 h-11 rounded-full bg-white border border-berry-700/25 text-berry-700 hover:bg-berry-700 hover:border-transparent hover:text-white flex items-center justify-center shadow-sm transition-colors" href="#home" aria-label="Back to top"><span aria-hidden="true">↑</span></a>
   </div>
 </footer>
 </body>
