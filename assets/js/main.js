@@ -159,7 +159,7 @@ function setupContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  const status = document.getElementById('form-status');
+  const popup = document.getElementById('form-popup');
   const submitButton = form.querySelector('button[type="submit"]');
   const submitLabel = form.querySelector('[data-submit-label]');
   const isConnected = Boolean(SITE.web3formsAccessKey);
@@ -206,24 +206,44 @@ function setupContactForm() {
     });
   });
 
-  function showStatus(type, title, text, linkEmail = false) {
-    status.dataset.type = type;
-    status.querySelector('[data-status-title]').textContent = title;
-    const textEl = status.querySelector('[data-status-text]');
-    textEl.textContent = text;
+  /* ---------- Result popup (success or error) ---------- */
+  const popupTitle = document.getElementById('form-popup-title');
+  const popupText = document.getElementById('form-popup-text');
+  const popupButton = popup?.querySelector('[data-popup-close]');
+  const canUsePopup = popup && typeof popup.showModal === 'function';
+
+  if (canUsePopup) {
+    popupButton.addEventListener('click', () => popup.close());
+    // Clicking the dark area outside the popup closes it
+    popup.addEventListener('click', (event) => {
+      if (event.target === popup) popup.close();
+    });
+    // Escape closes the dialog natively; this runs for every way of closing
+    popup.addEventListener('close', () => submitButton.focus({ preventScroll: true }));
+  }
+
+  function showPopup(type, title, text, { linkEmail = false, buttonText = 'Close' } = {}) {
+    if (!canUsePopup) {
+      // Very old browsers without <dialog>: a plain alert still tells the visitor what happened
+      window.alert(`${title}\n\n${text}${linkEmail ? ` ${SITE.email}` : ''}`);
+      return;
+    }
+    popup.dataset.type = type;
+    popupTitle.textContent = title;
+    popupText.textContent = text;
     if (linkEmail) {
       const link = document.createElement('a');
       link.href = `mailto:${SITE.email}`;
       link.textContent = SITE.email;
-      textEl.append(' ', link, '.');
+      popupText.append(' ', link, '.');
     }
-    status.hidden = false;
-    status.focus({ preventScroll: true });
+    popupButton.textContent = buttonText;
+    popup.showModal();
+    popupButton.focus();
   }
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    status.hidden = true;
 
     const results = Object.keys(fields).map(validateField);
     if (results.includes(false)) {
@@ -232,9 +252,12 @@ function setupContactForm() {
     }
 
     if (!isConnected) {
-      showStatus('error', 'Message not sent.', 'The form isn\u2019t connected yet. Please email me directly at', true);
+      showPopup('error', 'Message not sent', 'The contact form isn\u2019t set up yet, so your message couldn\u2019t be delivered. Please email me directly at', { linkEmail: true });
       return;
     }
+
+    const senderName = fields.name.value.trim();
+    const senderEmail = fields.email.value.trim();
 
     const data = new FormData(form);
     data.append('access_key', SITE.web3formsAccessKey);
@@ -255,11 +278,15 @@ function setupContactForm() {
         throw new Error(result.message || `Request failed (${response.status})`);
       }
       form.reset();
-      showStatus('success', 'Message sent.', 'Thanks for getting in touch. I’ll reply to the email address you gave.');
+      showPopup('success', 'Message sent!', `Thank you, ${senderName}. I’ve received your message and will get back to you at ${senderEmail} as soon as I can.`, { buttonText: 'Done' });
     } catch (error) {
       // The exact reason (e.g. "Invalid access key") shows in the browser console: press F12 > Console
       console.error('Contact form error:', error.message);
-      showStatus('error', 'Message not sent.', 'Something went wrong on the way. Try again in a moment, or email me directly at', true);
+      const offline = !navigator.onLine;
+      const reason = offline
+        ? 'It looks like you’re offline. Check your internet connection and try again. Your message is still in the form.'
+        : 'Something went wrong while sending your message. Your message is still in the form, so please try again in a moment, or email me directly at';
+      showPopup('error', 'Message not sent', reason, { linkEmail: !offline, buttonText: 'Try again' });
     } finally {
       submitButton.disabled = false;
       submitLabel.textContent = 'Send Message';

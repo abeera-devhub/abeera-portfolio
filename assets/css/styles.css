@@ -432,8 +432,7 @@ a:hover .logo-star { transform: rotate(90deg); }
 .btn-project:hover .btn-arrow { transform: translate(2px, -2px); }
 
 /* ---------- Education ---------- */
-.education-card,
-.availability-card {
+.education-card {
   padding: 1.75rem;
   border-radius: 2rem;
   background: #fff;
@@ -441,11 +440,22 @@ a:hover .logo-star { transform: rotate(90deg); }
   box-shadow: 0 14px 40px -10px rgba(190, 24, 93, 0.08), 0 6px 16px -6px rgba(0, 0, 0, 0.04);
 }
 @media (min-width: 640px) { .education-card { padding: 2.25rem; } }
+
+/* Location card sits inside the education card: below on small screens, on the right (vertically centred) on desktop */
+.education-layout { display: grid; gap: 2rem; }
+@media (min-width: 1024px) {
+  .education-layout { grid-template-columns: minmax(0, 1fr) 19rem; align-items: center; gap: 2.5rem; }
+}
 .availability-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: #FFFDF9;
+  padding: 1.75rem;
+  border-radius: 1.5rem;
+  /* Same light gradient as the header and footer */
+  background-color: #FFFDF9;
+  background-image: linear-gradient(100deg, rgba(244, 114, 182, 0.14) 0%, rgba(255, 253, 249, 0) 50%, rgba(253, 224, 71, 0.22) 100%);
+  border: 1px solid #F3E3E8;
 }
 .availability-card a { margin-top: auto; }
 .availability-card p { margin-bottom: 1.5rem; }
@@ -731,15 +741,60 @@ a.contact-row:hover .contact-go {
 .contact-form .form-input { border-radius: 0.85rem; background: #FFFDF9; }
 .field-error { margin-top: 0.35rem; font-size: 0.85rem; color: #B91C1C; font-weight: 600; }
 
-.form-status {
-  padding: 1rem 1.25rem;
-  border-radius: 1rem;
-  border: 2px solid;
-  font-size: 0.95rem;
+/* Popup after sending the form (success or error), centred on screen */
+.form-popup {
+  width: min(92vw, 26rem);
+  padding: 2rem 1.75rem 1.75rem;
+  border: 1px solid #F3E3E8;
+  border-radius: 1.75rem;
+  text-align: center;
+  color: #111815;
+  background-color: #FFFDF9;
+  background-image: linear-gradient(100deg, rgba(244, 114, 182, 0.14) 0%, rgba(255, 253, 249, 0) 50%, rgba(253, 224, 71, 0.22) 100%);
+  box-shadow: 0 24px 60px -12px rgba(17, 24, 21, 0.3);
 }
-.form-status[data-type="success"] { border-color: #BE185D; background: #FDF2F8; color: #831843; }
-.form-status[data-type="error"] { border-color: #B91C1C; background: #FEF2F2; color: #7F1D1D; }
-.form-status a { font-weight: 700; text-decoration: underline; }
+.form-popup::backdrop { background: rgba(17, 24, 21, 0.45); backdrop-filter: blur(3px); }
+.form-popup[open] { animation: popup-in 220ms ease-out; }
+@keyframes popup-in { from { opacity: 0; transform: translateY(8px) scale(0.96); } }
+
+.form-popup-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 999px;
+  color: #fff;
+  background: #BE185D;
+  box-shadow: 0 8px 20px -6px rgba(190, 24, 93, 0.5);
+}
+.form-popup-icon svg { width: 1.75rem; height: 1.75rem; }
+.form-popup .popup-icon-error { display: none; }
+.form-popup[data-type="error"] .form-popup-icon { background: #B91C1C; box-shadow: 0 8px 20px -6px rgba(185, 28, 28, 0.5); }
+.form-popup[data-type="error"] .popup-icon-success { display: none; }
+.form-popup[data-type="error"] .popup-icon-error { display: block; }
+
+.form-popup-title { margin-top: 1rem; font-family: "Margarine", cursive; font-size: 1.75rem; line-height: 2.1rem; }
+.form-popup-text { margin-top: 0.5rem; font-size: 0.98rem; line-height: 1.6rem; color: #404040; overflow-wrap: anywhere; }
+.form-popup-text a { font-weight: 700; color: #BE185D; text-decoration: underline; text-underline-offset: 0.2em; }
+
+.form-popup-btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  min-height: 2.9rem;
+  border-radius: 999px;
+  background: #BE185D;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.form-popup-btn:hover { background: #9D174D; }
+.form-popup-btn:active { transform: scale(0.98); }
+.form-popup[data-type="error"] .form-popup-btn { background: #111815; }
+.form-popup[data-type="error"] .form-popup-btn:hover { background: #BE185D; }
 
 /* ---------- Reduced motion: switch off movement ---------- */
 @media (prefers-reduced-motion: reduce) {

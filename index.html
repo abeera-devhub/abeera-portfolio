@@ -428,8 +428,10 @@
         <h2 class="section-title" id="education-title">Education</h2>
         <p class="section-subtitle">Academic foundation in software engineering.</p>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-        <div class="lg:col-span-8 education-card">
+      <div class="education-card">
+        <!-- Degree details on the left, location card on the right (vertically centred) -->
+        <div class="education-layout">
+        <div class="education-main">
           <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-berry-700 text-white font-mono text-label-md uppercase"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg> Expected graduation: February 2028</p>
           <h3 class="mt-5 text-headline-md md:text-[1.875rem] md:leading-[2.375rem] text-charcoal-900">Bachelor of Science in Software Engineering</h3>
           <p class="mt-2 flex items-center gap-2 text-body-lg font-semibold text-berry-700"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg> COMSATS University Islamabad, Lahore Campus</p>
@@ -446,12 +448,13 @@
               <li>Software Re-Engineering</li>
           </ul>
         </div>
-        <aside class="lg:col-span-4 availability-card" aria-labelledby="availability-title">
+        <aside class="availability-card" aria-labelledby="availability-title">
           <span class="availability-icon"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
           <h3 class="mt-4 text-headline-sm text-charcoal-900" id="availability-title">Lahore, Pakistan</h3>
           <p class="mt-2 text-body-md text-neutral-800">Currently open to internship opportunities, junior web development roles, and freelance projects.</p>
           <a class="mt-6 inline-flex items-center justify-center w-full min-h-[2.75rem] bg-charcoal-900 text-white rounded-full text-xs font-bold uppercase tracking-wider hover:bg-berry-700 active:scale-[0.97] transition-all" href="#contact">Get in Touch</a>
         </aside>
+        </div>
       </div>
     </div>
   </section>
@@ -507,14 +510,21 @@
               <button class="w-full min-h-[3rem] rounded-full bg-berry-700 hover:bg-berry-800 active:scale-[0.98] text-white font-extrabold text-sm uppercase tracking-wider shadow-lg shadow-berry-700/30 hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-wait disabled:hover:translate-y-0" type="submit">
                 <span data-submit-label>Send Message</span>
               </button>
-              <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1" hidden>
-                <p class="font-bold" data-status-title></p>
-                <p class="mt-1" data-status-text></p>
-              </div>
             </form>
         </div>
       </div>
     </div>
+
+    <!-- Popup shown after the form is sent (or fails). main.js fills in the text and opens it. -->
+    <dialog class="form-popup" id="form-popup" aria-labelledby="form-popup-title" aria-describedby="form-popup-text">
+      <span class="form-popup-icon" aria-hidden="true">
+        <svg class="popup-icon-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+        <svg class="popup-icon-error" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 7v6"/><path d="M12 17h.01"/></svg>
+      </span>
+      <h3 class="form-popup-title" id="form-popup-title"></h3>
+      <p class="form-popup-text" id="form-popup-text"></p>
+      <button class="form-popup-btn" type="button" data-popup-close>Close</button>
+    </dialog>
   </section>
 </main>
 
