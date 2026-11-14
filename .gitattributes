@@ -1,0 +1,19 @@
+# Normalise line endings for text files
+* text=auto eol=lf
+
+*.html text diff=html
+*.css  text diff=css
+*.js   text
+*.md   text
+*.svg  text
+
+# Binary files: never touch line endings or try to diff them
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.webp binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.woff binary
+*.woff2 binary

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ===== SEO & sharing ===== -->
+<title>Abeera | Web Developer in Lahore</title>
+<meta name="description" content="Abeera is a web developer and BS Software Engineering student at COMSATS University Islamabad, Lahore Campus. She builds responsive websites and web apps with HTML, CSS, JavaScript, Node.js, Express, SQL and MongoDB.">
+<meta name="author" content="Abeera">
+<meta name="theme-color" content="#FFFDF9">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Abeera | Web Developer">
+<meta property="og:description" content="Web developer and Software Engineering student in Lahore, building responsive, easy-to-use websites.">
+<meta name="twitter:card" content="summary">
+<!-- When the site is live, add: <link rel="canonical" href="https://YOUR-DOMAIN/"> and <meta property="og:url" content="https://YOUR-DOMAIN/"> -->
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<!-- ===== Fonts: Margarine (logo and headings), Plus Jakarta Sans (text), JetBrains Mono (small labels) ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Margarine&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ===== Tailwind (Play CDN, with the forms plugin) + colour/font settings ===== -->
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+  tailwind.config = {
+    // Hover styles only apply on devices that can hover (no "stuck" hover on phones)
+    future: { hoverOnlyWhenSupported: true },
+    theme: {
+      extend: {
+        colors: {
+          cream: { 50: '#FFFDF9', 100: '#FAF7F0', 200: '#F4EFE6', 300: '#EADFCF' },
+          sun: { 100: '#FEF9C3', 200: '#FEF08A', 300: '#FDE047', 400: '#FACC15', 500: '#EAB308' },
+          berry: { 500: '#EC4899', 600: '#DB2777', 700: '#BE185D', 800: '#9D174D', 900: '#831843' },
+          charcoal: { 800: '#1F2421', 900: '#111815' },
+        },
+        fontFamily: {
+          display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+          brand: ['Margarine', 'cursive'],
+        },
+        // Type scale (same sizes as the first portfolio)
+        fontSize: {
+          'display': ['3.75rem', { lineHeight: '4.25rem', letterSpacing: '-0.03em', fontWeight: '800' }],
+          'display-mobile': ['2.5rem', { lineHeight: '3rem', letterSpacing: '-0.025em', fontWeight: '800' }],
+          'headline-lg': ['2.25rem', { lineHeight: '2.75rem', letterSpacing: '-0.02em', fontWeight: '700' }],
+          'headline-lg-mobile': ['1.75rem', { lineHeight: '2.25rem', letterSpacing: '-0.015em', fontWeight: '700' }],
+          'headline-md': ['1.5rem', { lineHeight: '2rem', letterSpacing: '-0.015em', fontWeight: '600' }],
+          'headline-sm': ['1.25rem', { lineHeight: '1.75rem', letterSpacing: '-0.01em', fontWeight: '600' }],
+          'body-lg': ['1.125rem', { lineHeight: '1.75rem', letterSpacing: '-0.005em', fontWeight: '400' }],
+          'body-md': ['1rem', { lineHeight: '1.625rem', letterSpacing: '0em', fontWeight: '400' }],
+          'body-sm': ['0.875rem', { lineHeight: '1.375rem', letterSpacing: '0em', fontWeight: '400' }],
+          'label-md': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.06em', fontWeight: '600' }],
+          'label-sm': ['0.6875rem', { lineHeight: '0.875rem', letterSpacing: '0.08em', fontWeight: '500' }],
+        },
+        borderRadius: { '4xl': '2rem' },
+      },
+    },
+  };
+</script>
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body class="bg-cream-50 text-charcoal-800 font-sans text-body-md antialiased selection:bg-berry-700 selection:text-white">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header sticky top-0 z-50 bg-cream-50/90 backdrop-blur-md border-b border-neutral-200/70">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 h-20 flex items-center justify-between gap-4">
+    <a class="logo group flex items-center gap-2 rounded-lg" href="#home" aria-label="Abeera, back to top">
+      <span class="logo-star" aria-hidden="true">✦</span>
+      <span class="font-brand text-2xl md:text-[1.75rem] text-charcoal-900 group-hover:text-berry-700 transition-colors">Abeera</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold tracking-wide text-neutral-700" aria-label="Main">
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#education">Education</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a class="hidden sm:inline-flex items-center justify-center h-11 px-6 rounded-full bg-charcoal-900 text-cream-50 text-sm font-bold uppercase tracking-wider hover:bg-berry-700 active:scale-95 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5" href="#contact">Let's Connect</a>
+      <!-- GitHub (URL is set in assets/js/main.js) -->
+      <a class="w-11 h-11 rounded-full bg-sun-200 hover:bg-sun-300 active:scale-95 flex items-center justify-center text-charcoal-900 transition-all" data-link="github" href="https://github.com/abeera-devhub" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <!-- Mobile menu button -->
+      <button class="menu-toggle inline-flex lg:hidden w-11 h-11 rounded-full bg-charcoal-900 text-cream-50 items-center justify-center hover:bg-berry-700 transition-colors" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span class="menu-toggle-lines" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu (outside <header> so the header blur doesn't trap its fixed position) -->
+<nav class="mobile-menu fixed inset-x-0 top-20 bottom-0 z-40 overflow-y-auto bg-cream-50 lg:hidden" id="mobile-menu" aria-label="Mobile" hidden>
+  <div class="px-5 sm:px-6 py-6 flex flex-col">
+    <a class="nav-link mobile-link" href="#home">Home</a>
+    <a class="nav-link mobile-link" href="#about">About</a>
+    <a class="nav-link mobile-link" href="#skills">Skills</a>
+    <a class="nav-link mobile-link" href="#projects">Projects</a>
+    <a class="nav-link mobile-link" href="#education">Education</a>
+    <a class="nav-link mobile-link" href="#contact">Contact</a>
+    <a class="mobile-link-cta mt-8 self-start inline-flex items-center justify-center h-12 px-8 rounded-full bg-berry-700 text-white font-bold text-sm uppercase tracking-wider" href="#contact">Let's Connect</a>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+
+  <!-- ==================== HERO ==================== -->
+  <section class="relative pt-10 pb-14 md:pt-16 md:pb-20 overflow-hidden" id="home" aria-labelledby="hero-title">
+    <!-- Soft colour glows (decoration) -->
+    <div class="pointer-events-none absolute -top-16 -left-20 w-96 h-96 glow-blob-pink" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute top-1/3 -right-24 w-[30rem] h-[30rem] glow-blob-yellow" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute bottom-0 left-1/3 w-80 h-80 glow-blob-purple" aria-hidden="true"></div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-8 items-center lg:items-start">
+
+        <!-- Left: intro -->
+        <div class="lg:col-span-7">
+          <h1 class="hero-name font-brand" id="hero-title">Hi, I'm Abeera.</h1>
+          <p class="hero-role">
+            <span class="sr-only">Web Developer &amp; Software Engineering Student</span>
+            <!-- Typed out letter by letter by main.js; the hidden copy keeps the space reserved so nothing jumps -->
+            <span class="tw" aria-hidden="true"><span class="tw-ghost">Web Developer &amp; Software Engineering Student</span><span class="tw-typed" data-typewriter>Web Developer &amp; Software Engineering Student</span></span>
+          </p>
+          <p class="mt-6 text-body-lg text-neutral-700 max-w-xl">I build responsive, user-friendly websites and web applications, from clean front-end interfaces to the back-end logic and databases behind them, backed by a strong software engineering foundation.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a class="inline-flex items-center justify-center min-h-[3.25rem] px-8 rounded-full bg-berry-700 hover:bg-berry-800 active:scale-[0.97] text-white font-bold text-sm tracking-wider uppercase shadow-lg shadow-berry-700/25 hover:-translate-y-0.5 transition-all" href="#projects">Explore My Work</a>
+            <a class="inline-flex items-center justify-center min-h-[3.25rem] px-8 rounded-full bg-sun-200 hover:bg-sun-300 active:scale-[0.97] text-charcoal-900 font-bold text-sm tracking-wider uppercase hover:-translate-y-0.5 transition-all shadow-sm" href="#contact">Get in Touch</a>
+          </div>
+        </div>
+
+        <!-- Right: arched portrait with highlights (photo top lines up with the main heading) -->
+        <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-[20rem] sm:max-w-sm lg:max-w-md">
+            <div class="arch-frame p-3 bg-gradient-to-b from-sun-300 via-pink-200 to-amber-100 shadow-2xl">
+              <div class="arch-frame overflow-hidden bg-cream-200 relative aspect-[4/5] border-4 border-white">
+                <!-- PHOTO: assets/images/abeera.jpg (4:5 ratio) -->
+                <img class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" src="assets/images/abeera.jpg" alt="Portrait of Abeera" width="896" height="1120" fetchpriority="high" decoding="async">
+              </div>
+            </div>
+            <!-- Highlights (decoration: the same facts are written in the text) -->
+            <div class="hero-tag absolute -top-4 -right-1 sm:-right-6 bg-berry-700 text-white rotate-3" aria-hidden="true"><span>✶</span> Front-end &amp; Full-stack Development</div>
+            <div class="hero-tag absolute -bottom-5 right-0 sm:right-2 bg-cream-100 text-berry-700 -rotate-1 border border-berry-600/20" aria-hidden="true"><span>●</span> Open to Internship Opportunities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wavy divider (decoration) -->
+  <div class="w-full overflow-hidden leading-none text-berry-600" aria-hidden="true">
+    <svg class="w-full h-6 md:h-9" fill="none" preserveAspectRatio="none" viewBox="0 0 1200 40"><path d="M0,20 Q150,0 300,20 T600,20 T900,20 T1200,20" stroke="currentColor" stroke-linecap="round" stroke-width="4" vector-effect="non-scaling-stroke"/></svg>
+  </div>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-accent" aria-hidden="true"></span>
+        <h2 class="section-title" id="about-title">About Me</h2>
+        <p class="section-subtitle">Turning ideas into functional digital experiences.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div class="lg:col-span-7 space-y-5 text-body-lg text-neutral-700">
+          <p class="about-lead">I'm a Software Engineering student with a growing focus on web development and building practical digital solutions.</p>
+          <p>I enjoy working at the intersection of design and development - creating interfaces that are intuitive to use while understanding the functionality and technology behind them.</p>
+          <p>Through academic projects and independent development, I have worked with front-end technologies, server-side development, databases, and programming concepts. These experiences have helped me understand how individual components come together to form complete applications.</p>
+        </div>
+        <aside class="lg:col-span-5 approach-card" aria-labelledby="approach-title">
+          <h3 class="approach-title" id="approach-title">How I work</h3>
+          <p>I approach development with curiosity, attention to detail, and a problem-solving mindset. I believe in writing maintainable code, learning continuously, and improving every project through thoughtful implementation.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section class="section bg-cream-100/60" id="skills" aria-labelledby="skills-title">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-accent" aria-hidden="true"></span>
+        <h2 class="section-title" id="skills-title">Technical Skills</h2>
+        <p class="section-subtitle">My development toolkit - languages, technologies, and tools I work with.</p>
+      </div>
+      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" role="list">
+        <li class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+            <h3 class="skill-title">Programming Languages</h3>
+          </div>
+          <ul class="skill-chips" role="list"><li>C</li><li>Java</li><li>Python</li><li>JavaScript</li><li>SQL</li></ul>
+        </li>
+        <li class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg></span>
+            <h3 class="skill-title">Front-end Development</h3>
+          </div>
+          <ul class="skill-chips" role="list"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap</li><li>Responsive Web Design</li><li>DOM Manipulation</li></ul>
+        </li>
+        <li class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>
+            <h3 class="skill-title">Back-end Development</h3>
+          </div>
+          <ul class="skill-chips" role="list"><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>CRUD Operations</li><li>JSON</li></ul>
+        </li>
+        <li class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg></span>
+            <h3 class="skill-title">Database Management</h3>
+          </div>
+          <ul class="skill-chips" role="list"><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Database Design</li><li>ERD &amp; Normalization</li></ul>
+        </li>
+        <li class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span>
+            <h3 class="skill-title">Development Tools</h3>
+          </div>
+          <ul class="skill-chips" role="list"><li>Git</li><li>GitHub</li><li>WordPress</li><li>Selenium</li></ul>
+        </li>
+        <li class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></span>
+            <h3 class="skill-title">Design &amp; Project Tools</h3>
+          </div>
+          <ul class="skill-chips" role="list"><li>Figma</li><li>Stitch AI</li><li>Canva</li><li>Microsoft Project</li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <!--
+    HOW TO ADD A PROJECT: copy one of the <article class="project-card"> blocks below and change the text.
+    LINKS: only add a "Live demo" button once a project is really deployed, e.g.
+      <a class="btn-project" href="https://YOUR-PROJECT.vercel.app" target="_blank" rel="noopener noreferrer"><span>Live Demo</span><span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
+    PICTURES: real screenshots live in assets/images/projects/. Pictures marked "Illustration" are not screenshots;
+      replace them with real 4:3 screenshots (e.g. 1600x1200) when you have them and delete the illus-badge line.
+  -->
+  <section class="section relative overflow-hidden" id="projects" aria-labelledby="projects-title">
+    <div class="pointer-events-none absolute top-1/4 right-0 w-96 h-96 glow-blob-pink" aria-hidden="true"></div>
+    <div class="section-inner relative z-10">
+      <div class="section-head">
+        <span class="section-accent" aria-hidden="true"></span>
+        <h2 class="section-title" id="projects-title">Featured Projects</h2>
+        <p class="section-subtitle">A showcase of applications I've developed, exploring full-stack web development, data structures, and desktop software.</p>
+      </div>
+      <div class="project-list space-y-8 lg:space-y-10">
+
+        <!-- PROJECT 1: Restaurant Digital Menu & QR Ordering System (real screenshots + gallery) -->
+        <article class="project-card" aria-labelledby="project-restaurant-title">
+          <div class="lg:col-span-6 min-w-0 project-text">
+            <ul class="flex flex-wrap items-center gap-2" role="list" aria-label="Category"><li class="project-pill">Full-Stack Web Application</li></ul>
+            <h3 class="project-title" id="project-restaurant-title">Restaurant Digital Menu &amp; QR Ordering System</h3>
+            <p class="project-desc">A full-stack ordering platform built around table-specific QR codes. Customers browse the digital menu, customize their cart and order from their table, while staff manage incoming orders and admins maintain the menu.</p>
+            <div class="capabilities">
+              <div>
+                <h4 class="capability-title">Customers</h4>
+                <ul class="capability-list" role="list"><li>QR code table identification</li><li>Menu search and categories</li><li>Cart with special instructions</li><li>Order tracking and bill requests</li></ul>
+              </div>
+              <div>
+                <h4 class="capability-title">Staff &amp; Admin</h4>
+                <ul class="capability-list" role="list"><li>Incoming order management</li><li>Order status updates</li><li>Menu and category management</li></ul>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 min-w-0 space-y-3 project-media" data-gallery>
+            <button class="project-frame gallery-main block w-full" type="button" data-gallery-index="1" aria-label="Open screenshot gallery">
+              <img class="w-full h-full object-cover" src="assets/images/projects/restaurant/cover-showcase.webp" alt="Three screens of the restaurant app: food details, the digital menu and order tracking" width="1600" height="1200" loading="lazy" decoding="async">
+            </button>
+            <ul class="gallery-thumbs" role="list" aria-label="Project screenshots">
+              <li><button class="gallery-thumb" type="button" data-gallery-index="0" data-full="assets/images/projects/restaurant/qr-landing.webp" data-caption="QR landing screen: the table is identified automatically" aria-label="View screenshot: QR landing screen: the table is identified automatically"><img src="assets/images/projects/restaurant/qr-landing-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="1" data-full="assets/images/projects/restaurant/digital-menu.webp" data-caption="Digital menu with search, categories and dish cards" aria-label="View screenshot: Digital menu with search, categories and dish cards"><img src="assets/images/projects/restaurant/digital-menu-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="2" data-full="assets/images/projects/restaurant/food-details.webp" data-caption="Food details with ingredients, special instructions and quantity" aria-label="View screenshot: Food details with ingredients, special instructions and quantity"><img src="assets/images/projects/restaurant/food-details-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="3" data-full="assets/images/projects/restaurant/cart.webp" data-caption="Shopping cart with quantity controls and order total" aria-label="View screenshot: Shopping cart with quantity controls and order total"><img src="assets/images/projects/restaurant/cart-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="4" data-full="assets/images/projects/restaurant/checkout.webp" data-caption="Checkout with order summary and payment preference (cash or card)" aria-label="View screenshot: Checkout with order summary and payment preference (cash or card)"><img src="assets/images/projects/restaurant/checkout-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="5" data-full="assets/images/projects/restaurant/order-tracking.webp" data-caption="Order tracking with live status and a Request Bill button" aria-label="View screenshot: Order tracking with live status and a Request Bill button"><img src="assets/images/projects/restaurant/order-tracking-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="6" data-full="assets/images/projects/restaurant/staff-dashboard.webp" data-caption="Staff dashboard with live table orders and bill requests" aria-label="View screenshot: Staff dashboard with live table orders and bill requests"><img src="assets/images/projects/restaurant/staff-dashboard-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="7" data-full="assets/images/projects/restaurant/admin-dashboard.webp" data-caption="Admin dashboard with orders, popular items and recent activity" aria-label="View screenshot: Admin dashboard with orders, popular items and recent activity"><img src="assets/images/projects/restaurant/admin-dashboard-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="8" data-full="assets/images/projects/restaurant/menu-management.webp" data-caption="Admin menu management: add, edit and toggle menu items" aria-label="View screenshot: Admin menu management: add, edit and toggle menu items"><img src="assets/images/projects/restaurant/menu-management-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+            </ul>
+            <p class="text-sm text-neutral-600">9 screenshots. Select one to view it full size.</p>
+          </div>
+          <div class="project-footer">
+            <ul class="flex flex-wrap gap-2" role="list" aria-label="Technologies used"><li class="tech-tag">HTML5</li><li class="tech-tag">CSS3</li><li class="tech-tag">JavaScript</li><li class="tech-tag">Node.js</li><li class="tech-tag">Express.js</li><li class="tech-tag">MongoDB</li></ul>
+            <div class="project-links">
+              <a class="btn-project" href="https://github.com/abeera-devhub/restaurant-digital-menu-qr-ordering-system" target="_blank" rel="noopener noreferrer"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg><span>View Source Code</span><span class="btn-arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: Couchly furniture store (real screenshots of the live store) -->
+        <article class="project-card project-flip" aria-labelledby="project-couchly-title">
+          <div class="lg:col-span-6 min-w-0 project-text">
+            <ul class="flex flex-wrap items-center gap-2" role="list" aria-label="Category"><li class="project-pill">E-Commerce Website</li><li class="project-pill project-pill-alt">WordPress &amp; WooCommerce</li></ul>
+            <h3 class="project-title" id="project-couchly-title">Couchly - Furniture E-Commerce Store</h3>
+            <p class="project-desc">A live furniture store built with WordPress, WooCommerce and Elementor, where visitors browse collections, filter products by price and category, and manage their cart before checkout.</p>
+            <div class="capabilities">
+              <div>
+                <h4 class="capability-title">Shopping</h4>
+                <ul class="capability-list" role="list"><li>Product catalogue with sale badges</li><li>Price, category and tag filters</li><li>Cart with shipping totals</li></ul>
+              </div>
+              <div>
+                <h4 class="capability-title">Marketing</h4>
+                <ul class="capability-list" role="list"><li>Hero banner and category showcases</li><li>Limited-time offer countdown</li><li>Testimonials, blog and newsletter</li></ul>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 min-w-0 space-y-3 project-media" data-gallery>
+            <button class="project-frame gallery-main block w-full" type="button" data-gallery-index="0" aria-label="Open screenshot gallery">
+              <img class="w-full h-full object-cover" src="assets/images/projects/couchly/cover-showcase.webp" alt="Couchly home page and shop page shown in browser windows on a teal background" width="1600" height="1200" loading="lazy" decoding="async">
+            </button>
+            <ul class="gallery-thumbs" role="list" aria-label="Store screenshots">
+              <li><button class="gallery-thumb" type="button" data-gallery-index="0" data-full="assets/images/projects/couchly/home-hero.webp" data-caption="Home page: header and hero banner" aria-label="View screenshot: Home page: header and hero banner"><img src="assets/images/projects/couchly/home-hero-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="1" data-full="assets/images/projects/couchly/categories.webp" data-caption="Home page: category showcase cards" aria-label="View screenshot: Home page: category showcase cards"><img src="assets/images/projects/couchly/categories-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="2" data-full="assets/images/projects/couchly/best-sellers.webp" data-caption="Home page: best-selling products with sale badges" aria-label="View screenshot: Home page: best-selling products with sale badges"><img src="assets/images/projects/couchly/best-sellers-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="3" data-full="assets/images/projects/couchly/limited-offer.webp" data-caption="Home page: limited-time offer with countdown" aria-label="View screenshot: Home page: limited-time offer with countdown"><img src="assets/images/projects/couchly/limited-offer-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="4" data-full="assets/images/projects/couchly/featured.webp" data-caption="Home page: featured products and promotional banner" aria-label="View screenshot: Home page: featured products and promotional banner"><img src="assets/images/projects/couchly/featured-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="5" data-full="assets/images/projects/couchly/shop.webp" data-caption="Shop page: product grid with price filter, categories and tags" aria-label="View screenshot: Shop page: product grid with price filter, categories and tags"><img src="assets/images/projects/couchly/shop-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="6" data-full="assets/images/projects/couchly/cart.webp" data-caption="Cart page: product, quantity, flat-rate shipping and totals" aria-label="View screenshot: Cart page: product, quantity, flat-rate shipping and totals"><img src="assets/images/projects/couchly/cart-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="7" data-full="assets/images/projects/couchly/articles.webp" data-caption="Home page: blog articles section" aria-label="View screenshot: Home page: blog articles section"><img src="assets/images/projects/couchly/articles-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+              <li><button class="gallery-thumb" type="button" data-gallery-index="8" data-full="assets/images/projects/couchly/newsletter-footer.webp" data-caption="Home page: newsletter signup, brand logos and footer" aria-label="View screenshot: Home page: newsletter signup, brand logos and footer"><img src="assets/images/projects/couchly/newsletter-footer-thumb.webp" alt="" width="240" height="240" loading="lazy" decoding="async"></button></li>
+            </ul>
+            <p class="text-sm text-neutral-600">9 screenshots of the live store. Select one to view it full size.</p>
+          </div>
+          <div class="project-footer">
+            <ul class="flex flex-wrap gap-2" role="list" aria-label="Technologies used"><li class="tech-tag">WordPress</li><li class="tech-tag">WooCommerce</li><li class="tech-tag">Elementor</li><li class="tech-tag">Custom Code</li><li class="tech-tag">Hostinger</li></ul>
+            <div class="project-links">
+              <a class="btn-project" href="https://paleturquoise-rhinoceros-381501.hostingersite.com/" target="_blank" rel="noopener noreferrer"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>Visit Live Store</span><span class="btn-arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: Expression Evaluator (illustration, not a screenshot) -->
+        <article class="project-card" aria-labelledby="project-evaluator-title">
+          <div class="lg:col-span-6 min-w-0 project-text">
+            <ul class="flex flex-wrap items-center gap-2" role="list" aria-label="Category"><li class="project-pill">Java Web Application</li><li class="project-pill project-pill-alt">Data Structures</li></ul>
+            <h3 class="project-title" id="project-evaluator-title">Expression Evaluator</h3>
+            <p class="project-desc">An interactive Java web application that builds, validates and evaluates mathematical expressions and converts them between infix, prefix and postfix, with step-by-step visualizations of stacks and trees.</p>
+            <div class="capabilities">
+              <div>
+                <h4 class="capability-title">Expressions</h4>
+                <ul class="capability-list" role="list"><li>Building and validation</li><li>Stack-based evaluation</li><li>Infix, prefix and postfix conversion</li></ul>
+              </div>
+              <div>
+                <h4 class="capability-title">Data Structures</h4>
+                <ul class="capability-list" role="list"><li>Expression tree visualization</li><li>BST and AVL tree operations</li><li>Step-by-step evaluation view</li></ul>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 min-w-0 project-media">
+            <div class="project-frame">
+              <img class="w-full h-full object-cover" src="assets/images/projects/expression-evaluator.jpg" alt="Illustration of an expression evaluator: the expression (2 + 3) * 4 shown in infix, prefix and postfix, with its expression tree" width="1600" height="1200" loading="lazy" decoding="async">
+              <span class="illus-badge">Illustration</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <ul class="flex flex-wrap gap-2" role="list" aria-label="Technologies used"><li class="tech-tag">Java 17</li><li class="tech-tag">Spring Boot 3.5</li><li class="tech-tag">Maven</li><li class="tech-tag">Thymeleaf</li><li class="tech-tag">HTML</li><li class="tech-tag">CSS</li></ul>
+            <div class="project-links">
+              <a class="btn-project" href="https://github.com/MuddasarGhafoor/Java-Programming/tree/main/03_Projects/01_Expression_Evaluator" target="_blank" rel="noopener noreferrer"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg><span>View Source Code</span><span class="btn-arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: NoteHub (illustration, not a screenshot) -->
+        <article class="project-card project-flip" aria-labelledby="project-notehub-title">
+          <div class="lg:col-span-6 min-w-0 project-text">
+            <ul class="flex flex-wrap items-center gap-2" role="list" aria-label="Category"><li class="project-pill">Java Desktop Application</li></ul>
+            <h3 class="project-title" id="project-notehub-title">NoteHub - Personal Note Management</h3>
+            <p class="project-desc">A JavaFX desktop application for personal note management. Users sign up, log in, and create, view, edit and delete notes, each stored in their own folder using Java file handling.</p>
+            <div class="capabilities">
+              <div>
+                <h4 class="capability-title">Users</h4>
+                <ul class="capability-list" role="list"><li>Registration, login and logout</li><li>User-specific note storage</li></ul>
+              </div>
+              <div>
+                <h4 class="capability-title">Notes</h4>
+                <ul class="capability-list" role="list"><li>Create, view and edit notes</li><li>Delete with confirmation</li></ul>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 min-w-0 project-media">
+            <div class="project-frame">
+              <img class="w-full h-full object-cover" src="assets/images/projects/notehub.jpg" alt="Illustration of a desktop notes app: a list of notes beside an open note with edit and delete buttons" width="1600" height="1200" loading="lazy" decoding="async">
+              <span class="illus-badge">Illustration</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <ul class="flex flex-wrap gap-2" role="list" aria-label="Technologies used"><li class="tech-tag">Java</li><li class="tech-tag">JavaFX</li><li class="tech-tag">Object-Oriented Programming</li><li class="tech-tag">File Handling</li></ul>
+            <div class="project-links">
+              <a class="btn-project" href="https://github.com/Abeera0802/NoteHub_Final_Project" target="_blank" rel="noopener noreferrer"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg><span>View Source Code</span><span class="btn-arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Full-size screenshot viewer (opened by the gallery buttons; see setupGallery in main.js) -->
+    <dialog class="gallery-dialog" id="gallery-dialog" aria-labelledby="gallery-caption">
+      <figure class="gallery-figure">
+        <img id="gallery-image" src="data:," alt="">
+        <figcaption class="gallery-caption"><span id="gallery-caption"></span> <span class="gallery-count" id="gallery-count"></span></figcaption>
+      </figure>
+      <button class="gallery-btn gallery-prev" type="button" aria-label="Previous screenshot"><span aria-hidden="true">‹</span></button>
+      <button class="gallery-btn gallery-next" type="button" aria-label="Next screenshot"><span aria-hidden="true">›</span></button>
+      <button class="gallery-btn gallery-close" type="button" aria-label="Close screenshots"><span aria-hidden="true">×</span></button>
+    </dialog>
+  </section>
+
+  <!-- ==================== EDUCATION ==================== -->
+  <section class="section bg-cream-100/70" id="education" aria-labelledby="education-title">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-accent" aria-hidden="true"></span>
+        <h2 class="section-title" id="education-title">Education</h2>
+        <p class="section-subtitle">Academic foundation in software engineering.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div class="lg:col-span-8 education-card">
+          <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-berry-700 text-white font-mono text-label-md uppercase"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg> Expected graduation: February 2028</p>
+          <h3 class="mt-5 text-headline-md md:text-[1.875rem] md:leading-[2.375rem] text-charcoal-900">Bachelor of Science in Software Engineering</h3>
+          <p class="mt-2 flex items-center gap-2 text-body-lg font-semibold text-berry-700"><svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg> COMSATS University Islamabad, Lahore Campus</p>
+          <h4 class="mt-8 mb-4 font-mono text-label-md uppercase text-neutral-700">Relevant Coursework</h4>
+          <ul class="coursework" role="list">
+              <li>Object-Oriented Programming</li>
+              <li>Data Structures</li>
+              <li>Database Management Systems</li>
+              <li>Software Requirements Engineering</li>
+              <li>Software Quality Engineering</li>
+              <li>Software Project Management</li>
+              <li>Software Design and Architecture</li>
+              <li>Design and Analysis of Algorithms</li>
+              <li>Software Re-Engineering</li>
+          </ul>
+        </div>
+        <aside class="lg:col-span-4 availability-card" aria-labelledby="availability-title">
+          <span class="availability-icon"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+          <h3 class="mt-4 text-headline-sm text-charcoal-900" id="availability-title">Lahore, Pakistan</h3>
+          <p class="mt-2 text-body-md text-neutral-800">Currently open to internship opportunities, junior web development roles, and freelance projects.</p>
+          <a class="mt-6 inline-flex items-center justify-center w-full min-h-[2.75rem] bg-charcoal-900 text-white rounded-full text-xs font-bold uppercase tracking-wider hover:bg-berry-700 active:scale-[0.97] transition-all" href="#contact">Get in Touch</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-accent" aria-hidden="true"></span>
+        <h2 class="section-title" id="contact-title">Get in Touch</h2>
+        <p class="section-subtitle">Let's build something meaningful.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="space-y-4 text-body-md text-cream-100/90">
+            <p>I'm interested in connecting with teams, professionals, and clients who value thoughtful design and functional digital solutions.</p>
+            <p>Whether you have an internship opportunity, a web development project, or simply want to discuss my work, I'd be glad to hear from you.</p>
+          </div>
+          <div class="mt-auto pt-8">
+            <p class="font-mono text-label-md uppercase text-cream-100/70">Email</p>
+            <a class="email-link mt-1" data-link="email" href="mailto:abeera.devhub@gmail.com">
+              <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <span data-email-text>abeera.devhub@gmail.com</span>
+              <span class="email-arrow" aria-hidden="true">↗</span>
+            </a>
+            <div class="mt-5 flex flex-wrap items-center gap-3">
+              <a class="social-link" data-link="linkedin" href="https://www.linkedin.com/in/abeera-mustafa-87b50b41a" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
+            <a class="social-link" data-link="github" href="https://github.com/abeera-devhub" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h3 class="text-headline-sm text-charcoal-900 mb-4">Send a Message</h3>
+          <form class="contact-form" id="contact-form" novalidate>
+              <!-- Spam trap for bots: real visitors never see or fill this -->
+              <input class="hidden" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="form-label" for="contact-name">Your Name</label>
+                  <input class="form-input" id="contact-name" name="name" type="text" required autocomplete="name" maxlength="100" aria-describedby="contact-name-error">
+                  <p class="field-error" id="contact-name-error" hidden></p>
+                </div>
+                <div>
+                  <label class="form-label" for="contact-email">Email Address</label>
+                  <input class="form-input" id="contact-email" name="email" type="email" required autocomplete="email" inputmode="email" maxlength="150" aria-describedby="contact-email-error">
+                  <p class="field-error" id="contact-email-error" hidden></p>
+                </div>
+              </div>
+              <div>
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input class="form-input" id="contact-subject" name="subject" type="text" required maxlength="150" aria-describedby="contact-subject-error">
+                <p class="field-error" id="contact-subject-error" hidden></p>
+              </div>
+              <div>
+                <label class="form-label" for="contact-msg">Your Message</label>
+                <textarea class="form-input resize-y min-h-[6.5rem]" id="contact-msg" name="message" rows="4" required maxlength="5000" aria-describedby="contact-msg-error"></textarea>
+                <p class="field-error" id="contact-msg-error" hidden></p>
+              </div>
+              <button class="w-full min-h-[3rem] rounded-full bg-berry-700 hover:bg-berry-800 active:scale-[0.98] text-white font-extrabold text-sm uppercase tracking-wider shadow-lg shadow-berry-700/30 hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-wait disabled:hover:translate-y-0" type="submit">
+                <span data-submit-label>Send Message</span>
+              </button>
+              <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1" hidden>
+                <p class="font-bold" data-status-title></p>
+                <p class="mt-1" data-status-text></p>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-charcoal-900 text-neutral-300 py-12">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center">
+      <span class="flex items-center gap-2"><span class="logo-star" aria-hidden="true">✦</span><span class="font-brand text-2xl text-cream-50">Abeera</span></span>
+      <span class="text-sm text-neutral-400">© 2026 Abeera</span>
+    </div>
+    <nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-1 text-xs uppercase tracking-wider font-semibold text-neutral-400" aria-label="Footer">
+      <a class="footer-link" href="#home">Home</a>
+      <a class="footer-link" href="#about">About</a>
+      <a class="footer-link" href="#skills">Skills</a>
+      <a class="footer-link" href="#projects">Projects</a>
+      <a class="footer-link" href="#education">Education</a>
+      <a class="footer-link" href="#contact">Contact</a>
+    </nav>
+    <a class="w-11 h-11 rounded-full bg-neutral-800 hover:bg-berry-700 flex items-center justify-center text-white transition-colors" href="#home" aria-label="Back to top"><span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>
